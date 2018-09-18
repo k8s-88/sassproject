@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: blue;
+  color: white;
+  height: 300px;
+  width: 300px; }
+  .wrapper p {
+    font-family: sans-serif;
+    font-size: 30px;
+    padding-top: 135px; }
+  .wrapper:hover {
+    background-color: white;
+    color: blue; }
+
+/*# sourceMappingURL=style.css.map */

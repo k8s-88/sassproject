@@ -1,0 +1,52 @@
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function pxToRem($value) {
+    @return (strip-units($value) / 16) + rem;
+}
+
+@mixin button($color, $size) {
+    
+    $height: $size / 2;
+    $fontsize: $size / 5;
+    $padding: ($size / 4) - ($fontsize / 2);
+    
+    width: $size;
+    height: $height;
+    font-size: pxToRem($fontsize);
+    border-radius: 5px;
+    text-align: center;
+    background-color: $color;
+    padding-top: $padding;
+    box-sizing: border-box;
+    
+    @if $color != black {
+        color: gray;
+    }
+    @else {
+        color: white;
+    }
+    
+    &:hover {
+        background-color: darken($color, 10%);
+    }
+}
+
+@for $i from 1 through 4 {
+    $banana: black;
+    .btn-#{$i} {
+        @if $i == 1 {
+            $banana: red;
+        }
+        @else if $i == 2 {
+            $banana: blue;
+        }
+        @else if $i == 3 {
+            $banana: green;
+        }
+        @else {
+            $banana: lemonchiffon;
+        }
+        @include button($banana, 100px);
+    }
+}

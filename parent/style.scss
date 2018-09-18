@@ -1,0 +1,17 @@
+.wrapper {
+    background-color: blue;
+    color: white;
+    height: 300px;
+    width: 300px;
+
+    p {
+        font-family: sans-serif;
+        font-size: 30px;
+        padding-top: 135px;
+    }
+
+    &:hover {
+        background-color: white;
+        color: blue;
+    }
+}
